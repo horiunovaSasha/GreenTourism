@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using GreenTourism.Models;
 using GreenTourism.Data;
+using GreenTourism.DAL.DbContext;
 
 namespace GreenTourism
 {
