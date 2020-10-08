@@ -1,0 +1,8 @@
+D:\GreenTourism\GreenTourism.Domaim\bin\Debug\netcoreapp3.1\GreenTourism.Domain.deps.json
+D:\GreenTourism\GreenTourism.Domaim\bin\Debug\netcoreapp3.1\GreenTourism.Domain.dll
+D:\GreenTourism\GreenTourism.Domaim\bin\Debug\netcoreapp3.1\GreenTourism.Domain.pdb
+D:\GreenTourism\GreenTourism.Domaim\obj\Debug\netcoreapp3.1\GreenTourism.Domain.AssemblyInfoInputs.cache
+D:\GreenTourism\GreenTourism.Domaim\obj\Debug\netcoreapp3.1\GreenTourism.Domain.AssemblyInfo.cs
+D:\GreenTourism\GreenTourism.Domaim\obj\Debug\netcoreapp3.1\GreenTourism.Domain.dll
+D:\GreenTourism\GreenTourism.Domaim\obj\Debug\netcoreapp3.1\GreenTourism.Domain.pdb
+D:\GreenTourism\GreenTourism.Domaim\obj\Debug\netcoreapp3.1\GreenTourism.Domain.csprojAssemblyReference.cache
