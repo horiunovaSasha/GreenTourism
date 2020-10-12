@@ -22,5 +22,11 @@ namespace GreenTourism.DAL.Data
         public DbSet<Event> Events { get; set; }
         public DbSet<PlaceAmenity> PlaceAmenity { get; set; }
         public DbSet<Photo> Photos { get; set; }
+        public DbSet<PlacePhoto> PlacePhotos { get; set; }
+        public DbSet<EventPhoto> EventPhotos { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<EventUser> EventUsers { get; set; }
+        public DbSet<EventComment> EventComments { get; set; }
+        public DbSet<PlaceComment> PlaceComments { get; set; }
     }
 }
