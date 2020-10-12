@@ -4,14 +4,16 @@ using GreenTourism.DAL.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GreenTourism.DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201012170455_test_entities")]
+    partial class test_entities
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,28 +27,11 @@ namespace GreenTourism.DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("AmenityGroupId");
-
                     b.Property<string>("Name");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AmenityGroupId");
 
                     b.ToTable("Amenities");
-                });
-
-            modelBuilder.Entity("GreenTourism.DAL.Models.AmenityGroup", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("AmenityGroups");
                 });
 
             modelBuilder.Entity("GreenTourism.DAL.Models.ApplicationUser", b =>
@@ -93,9 +78,9 @@ namespace GreenTourism.DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("CreatedDate");
+                    b.Property<int>("Level");
 
-                    b.Property<int>("ReplyOnId");
+                    b.Property<int>("ParentCommentId");
 
                     b.Property<string>("Text");
 
@@ -118,13 +103,11 @@ namespace GreenTourism.DAL.Migrations
 
                     b.Property<DateTime>("CreatedDate");
 
+                    b.Property<DateTime>("DateAndTime");
+
                     b.Property<string>("Description");
 
-                    b.Property<DateTime>("EndDate");
-
                     b.Property<int?>("PlaceId");
-
-                    b.Property<DateTime>("StatDate");
 
                     b.HasKey("Id");
 
@@ -313,13 +296,6 @@ namespace GreenTourism.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Seasons");
-                });
-
-            modelBuilder.Entity("GreenTourism.DAL.Models.Amenity", b =>
-                {
-                    b.HasOne("GreenTourism.DAL.Models.AmenityGroup", "AmenityGroup")
-                        .WithMany()
-                        .HasForeignKey("AmenityGroupId");
                 });
 
             modelBuilder.Entity("GreenTourism.DAL.Models.Comment", b =>
