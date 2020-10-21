@@ -25,4 +25,9 @@
       <ProjectReference Include="..\GreenTourism.DAL\GreenTourism.DAL.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="wwwroot\img\" />
+      <Folder Include="wwwroot\vendor\" />
+    </ItemGroup>
+
 </Project>
