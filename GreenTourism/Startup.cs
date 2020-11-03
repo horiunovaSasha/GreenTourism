@@ -14,6 +14,8 @@ using Microsoft.AspNetCore.Identity;
 using GreenTourism.Models;
 using GreenTourism.Data;
 using GreenTourism.DAL.Data;
+using GreenTourism.Domain.Repositories;
+using GreenTourism.DAL.Repositories;
 
 namespace GreenTourism
 {
@@ -49,6 +51,9 @@ namespace GreenTourism
                 .AddEntityFrameworkStores<AppIdentityDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddTransient<IPlaceRepository, PlaceRepository>();
+            services.AddTransient<IRegionRepository, RegionRepository>();
+            services.AddTransient<ISeasonRepository, SeasonRepository>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

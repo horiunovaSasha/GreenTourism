@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authentication;
 
 namespace GreenTourism.Controllers
 {
+    //TODO move the logic to service in Domain project
     public class AccountController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;

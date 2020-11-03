@@ -21,11 +21,11 @@ namespace GreenTourism.DAL.Migrations
 
             modelBuilder.Entity("GreenTourism.DAL.Models.Amenity", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("AmenityGroupId");
+                    b.Property<long?>("AmenityGroupId");
 
                     b.Property<string>("Name");
 
@@ -38,7 +38,7 @@ namespace GreenTourism.DAL.Migrations
 
             modelBuilder.Entity("GreenTourism.DAL.Models.AmenityGroup", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -89,7 +89,7 @@ namespace GreenTourism.DAL.Migrations
 
             modelBuilder.Entity("GreenTourism.DAL.Models.Comment", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -110,7 +110,7 @@ namespace GreenTourism.DAL.Migrations
 
             modelBuilder.Entity("GreenTourism.DAL.Models.Event", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -122,7 +122,7 @@ namespace GreenTourism.DAL.Migrations
 
                     b.Property<DateTime>("EndDate");
 
-                    b.Property<int?>("PlaceId");
+                    b.Property<long?>("PlaceId");
 
                     b.Property<DateTime>("StatDate");
 
@@ -137,13 +137,13 @@ namespace GreenTourism.DAL.Migrations
 
             modelBuilder.Entity("GreenTourism.DAL.Models.EventComment", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CommentId");
+                    b.Property<long?>("CommentId");
 
-                    b.Property<int?>("EventId");
+                    b.Property<long?>("EventId");
 
                     b.HasKey("Id");
 
@@ -156,13 +156,13 @@ namespace GreenTourism.DAL.Migrations
 
             modelBuilder.Entity("GreenTourism.DAL.Models.EventPhoto", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("EventId");
+                    b.Property<long?>("EventId");
 
-                    b.Property<int?>("PhotoId");
+                    b.Property<long?>("PhotoId");
 
                     b.HasKey("Id");
 
@@ -175,13 +175,13 @@ namespace GreenTourism.DAL.Migrations
 
             modelBuilder.Entity("GreenTourism.DAL.Models.EventUser", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ApplicationUserId");
 
-                    b.Property<int?>("EventId");
+                    b.Property<long?>("EventId");
 
                     b.HasKey("Id");
 
@@ -194,7 +194,7 @@ namespace GreenTourism.DAL.Migrations
 
             modelBuilder.Entity("GreenTourism.DAL.Models.Photo", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -207,7 +207,7 @@ namespace GreenTourism.DAL.Migrations
 
             modelBuilder.Entity("GreenTourism.DAL.Models.Place", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -219,9 +219,9 @@ namespace GreenTourism.DAL.Migrations
 
                     b.Property<decimal>("Rating");
 
-                    b.Property<int?>("RegionId");
+                    b.Property<long?>("RegionId");
 
-                    b.Property<int?>("SeasonId");
+                    b.Property<long?>("SeasonId");
 
                     b.HasKey("Id");
 
@@ -234,13 +234,13 @@ namespace GreenTourism.DAL.Migrations
 
             modelBuilder.Entity("GreenTourism.DAL.Models.PlaceAmenity", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("AmenityId");
+                    b.Property<long?>("AmenityId");
 
-                    b.Property<int?>("PlaceId");
+                    b.Property<long?>("PlaceId");
 
                     b.HasKey("Id");
 
@@ -253,13 +253,13 @@ namespace GreenTourism.DAL.Migrations
 
             modelBuilder.Entity("GreenTourism.DAL.Models.PlaceComment", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CommentId");
+                    b.Property<long?>("CommentId");
 
-                    b.Property<int?>("PlaceId");
+                    b.Property<long?>("PlaceId");
 
                     b.HasKey("Id");
 
@@ -272,13 +272,13 @@ namespace GreenTourism.DAL.Migrations
 
             modelBuilder.Entity("GreenTourism.DAL.Models.PlacePhoto", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("PhotoId");
+                    b.Property<long?>("PhotoId");
 
-                    b.Property<int?>("PlaceId");
+                    b.Property<long?>("PlaceId");
 
                     b.HasKey("Id");
 
@@ -291,7 +291,7 @@ namespace GreenTourism.DAL.Migrations
 
             modelBuilder.Entity("GreenTourism.DAL.Models.Region", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -304,7 +304,7 @@ namespace GreenTourism.DAL.Migrations
 
             modelBuilder.Entity("GreenTourism.DAL.Models.Season", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
