@@ -1,8 +1,10 @@
-﻿namespace GreenTourism.DAL.Models
+﻿using GreenTourism.Domain.Entities;
+
+namespace GreenTourism.DAL.Models
 {
-    public class Place
+    public class Place : IEntity
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string LocationCoords { get; set; }

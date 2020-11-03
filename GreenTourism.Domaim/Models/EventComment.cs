@@ -1,8 +1,10 @@
-﻿namespace GreenTourism.DAL.Models
+﻿using GreenTourism.Domain.Entities;
+
+namespace GreenTourism.DAL.Models
 {
-    public class EventComment
+    public class EventComment : IEntity
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public Event Event { get; set; }
         public Comment Comment { get; set; }
     }
