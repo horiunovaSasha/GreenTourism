@@ -54,6 +54,8 @@ namespace GreenTourism
             services.AddTransient<IPlaceRepository, PlaceRepository>();
             services.AddTransient<IRegionRepository, RegionRepository>();
             services.AddTransient<ISeasonRepository, SeasonRepository>();
+            services.AddTransient<IPhotoRepository, PhotoRepository>();
+            services.AddTransient<IEventPhotoRepository, EventPhotoRepository>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

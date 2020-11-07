@@ -11,37 +11,21 @@ namespace GreenTourism.Controllers
         private readonly IPlaceRepository _placeRepository;
         private readonly IRegionRepository _regionRepository;
         private readonly ISeasonRepository _seasonRepository;
+        private readonly IPhotoRepository _photoRepository;
 
-        public PlacesController(IPlaceRepository placeRepository, IRegionRepository regionRepository, ISeasonRepository seasonRepository)
+        public PlacesController(IPlaceRepository placeRepository, IRegionRepository regionRepository, ISeasonRepository seasonRepository, IPhotoRepository photoRepository)
         {
             _placeRepository = placeRepository;
             _regionRepository = regionRepository;
             _seasonRepository = seasonRepository;
+            _photoRepository = photoRepository;
+            
         }
 
         public async Task<ActionResult> Index()
         {
-            //try
-            //{
-            //    var place = new Place()
-            //    {
-            //        Name = "Асканія Нова",
-            //        Description = "Оазиз серед степу",
-            //        LocationCoords = "000000000",
-            //        Rating = 9.05M,
-            //        Region = _regionRepository.FindById(1).Result,
-            //        Season = _seasonRepository.FindById(1).Result
-            //    };
-            //    await _placeRepository.CreateAsync(place);
-            //    await _placeRepository.SaveChanges();
-            //}
-            //catch (Exception ex)
-            //{
-            //    var test = ex;
-            //}
-
-            var places = _placeRepository.FindAll().Result;
-            return View();
+            var places = _placeRepository.GetPlacesWithImages();
+            return View(places);
         }
     }
 }
