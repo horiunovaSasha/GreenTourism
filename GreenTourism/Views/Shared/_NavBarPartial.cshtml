@@ -1,10 +1,11 @@
-﻿<header id="header" class="fixed-top">
+﻿@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<header id="header" class="fixed-top">
     <div class="container d-flex">
 
         <div class="logo mr-auto">
             <h1 class="text-light"><a href="index.html">Зелений туризм</a></h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
 
         <nav class="nav-menu d-none d-lg-block">
@@ -14,8 +15,15 @@
                 <li><a href="/home/blog">Події</a></li>
                 <li><a href="/home/about">Поради</a></li>
                 <li><a href="/home/contact">Contact</a></li>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <li class="get-started"><a href="/account/logout">Вийти</a></li>
+                }
+                else
+                {
+                    <li class="get-started"><a href="/account/login">Увійти</a></li>
+                }
 
-                <li class="get-started"><a href="/account/login">Увійти</a></li>
             </ul>
         </nav><!-- .nav-menu -->
 

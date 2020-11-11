@@ -6,7 +6,7 @@ namespace GreenTourism.Domain.Repositories
 {
     public interface IPlaceRepository : IRepository<Place> 
     {
-        Task<List<Place>> GetPlacesWithImages();
+        Task<List<Place>> GetPlacesList();
         Task<Place> GetDetailsPage(long id);
     }
 }

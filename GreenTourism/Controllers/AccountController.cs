@@ -135,6 +135,13 @@ namespace GreenTourism.Controllers
         {
             ViewData["ReturnUrl"] = returnUrl;
             var user = await _userManager.FindByNameAsync(model.Email);
+            
+            if (user == null) 
+            {
+                ModelState.AddModelError(string.Empty, "Некоректний логін або пароль.");
+                return View(model);
+            }
+
            //TODO add check if user exists
             if (ModelState.IsValid)
             {
@@ -165,8 +172,7 @@ namespace GreenTourism.Controllers
             return View(model);
         }
 
-        // [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpGet]
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();

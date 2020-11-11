@@ -17,7 +17,7 @@ namespace GreenTourism.Controllers
 
         public ActionResult Index()
         {
-            var places =  _placeRepository.GetPlacesWithImages()
+            var places =  _placeRepository.GetPlacesList()
                 .Result
                 .Select(x=>x.ToPlaceViewModel())
                 .ToList();

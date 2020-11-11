@@ -12,7 +12,7 @@ namespace GreenTourism.DAL.Repositories
     {
         public PlaceRepository(ApplicationDbContext dbContext) : base(dbContext) { }
 
-        public async Task<List<Place>> GetPlacesWithImages() 
+        public async Task<List<Place>> GetPlacesList() 
         {
             return  await dbContext.Set<Place>()
                 .Include(i=>i.PlacePhotos)
