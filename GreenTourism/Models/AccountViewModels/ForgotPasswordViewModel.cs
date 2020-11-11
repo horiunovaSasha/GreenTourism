@@ -1,4 +1,4 @@
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace GreenTourism.Models.AccountViewModels
 {
@@ -6,6 +6,7 @@ namespace GreenTourism.Models.AccountViewModels
     {
         [Required]
         [EmailAddress]
+        [Display(Name = "Електронна пошта")]
         public string Email { get; set; }
     }
 }

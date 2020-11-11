@@ -1,10 +1,12 @@
 ﻿using GreenTourism.DAL.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace GreenTourism.Domain.Repositories
 {
     public interface IPlaceRepository : IRepository<Place> 
     {
-        List<Place> GetPlacesWithImages();
+        Task<List<Place>> GetPlacesWithImages();
+        Task<Place> GetDetailsPage(long id);
     }
 }

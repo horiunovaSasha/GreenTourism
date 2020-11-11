@@ -1,0 +1,55 @@
+﻿@{
+    @model GreenTourism.DAL.Models.Place
+}
+
+<main id="main">
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="breadcrumb-hero">
+            <div class="container">
+                <div class="breadcrumb-hero">
+                    <h2>@Model.Name</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <ol>
+                <li><a href="index.html">Головна</a></li>
+                <li>@Model.Name</li>
+            </ol>
+        </div>
+    </section><!-- End Breadcrumbs -->
+    <section id="portfolio-details" class="portfolio-details">
+        <div class="container">
+
+            <div class="portfolio-details-container">
+                <div class="owl-carousel portfolio-details-carousel">
+                    @foreach (var image in Model.PlacePhotos)
+                    {
+                        <img src="~/img/places/@image.Photo.Path" class="img-fluid" alt="">
+                    }
+                </div>
+
+                <div class="portfolio-info">
+                    <h3>Project information</h3>
+                    <ul>
+                        <li><strong>Назва</strong>: @Model.Name</li>
+                        <li><strong>Опис</strong>: @Model.Description</li>
+                        <li><strong>Координати</strong>: @Model.LocationCoords</li>
+                        @*<li><strong>Регіон</strong>: @Model.LocationCoords </li>*@
+                        <li><strong>Рейтинг</strong>: @Model.Rating </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="portfolio-description">
+                <h2>Загальний опис місця</h2>
+                <p>
+                    @Model.Description
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+</main>

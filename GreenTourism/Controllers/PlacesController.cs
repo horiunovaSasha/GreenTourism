@@ -1,7 +1,7 @@
-﻿using GreenTourism.DAL.Models;
-using GreenTourism.Domain.Repositories;
+﻿using GreenTourism.Domain.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using System;
+using GreenTourism.Extensions;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace GreenTourism.Controllers
@@ -9,23 +9,25 @@ namespace GreenTourism.Controllers
     public class PlacesController : Controller
     {
         private readonly IPlaceRepository _placeRepository;
-        private readonly IRegionRepository _regionRepository;
-        private readonly ISeasonRepository _seasonRepository;
-        private readonly IPhotoRepository _photoRepository;
 
-        public PlacesController(IPlaceRepository placeRepository, IRegionRepository regionRepository, ISeasonRepository seasonRepository, IPhotoRepository photoRepository)
+        public PlacesController(IPlaceRepository placeRepository)
         {
             _placeRepository = placeRepository;
-            _regionRepository = regionRepository;
-            _seasonRepository = seasonRepository;
-            _photoRepository = photoRepository;
-            
         }
 
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
         {
-            var places = _placeRepository.GetPlacesWithImages();
+            var places =  _placeRepository.GetPlacesWithImages()
+                .Result
+                .Select(x=>x.ToPlaceViewModel())
+                .ToList();
             return View(places);
+        }
+
+        public async Task<ActionResult> Details(long id)
+        {
+            var details = await _placeRepository.GetDetailsPage(id);
+            return View(details);
         }
     }
 }

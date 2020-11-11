@@ -1,4 +1,5 @@
 ﻿using GreenTourism.Domain.Entities;
+using System.Collections.Generic;
 
 namespace GreenTourism.DAL.Models
 {
@@ -11,6 +12,6 @@ namespace GreenTourism.DAL.Models
         public Region Region { get; set; }
         public decimal Rating { get; set; }
         public Season Season { get; set; }
-        public Photo MainPhoto { get; set; }
+        public virtual List<PlacePhoto> PlacePhotos { get; set; }
     }
 }

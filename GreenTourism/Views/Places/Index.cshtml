@@ -1,5 +1,5 @@
 ﻿@{
-    @model List<GreenTourism.DAL.Models.Place>
+    @model List<GreenTourism.Models.PlaceViewModel>
     ViewData["Title"] = "Місця для зеленого туризму";
 }
 
@@ -41,15 +41,15 @@
             <div class="row portfolio-container" data-aos="fade-up">
                 @foreach (var place in Model)
                 {
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="border: 1px solid #eee; box-shadow: 0 2px 2px #ccc" >
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="border: 1px solid #eee; box-shadow: 0 2px 2px #ccc">
                         <div class="portfolio-wrap">
-                            <img src="~/img/places/@place.MainPhoto.Path" class="img-fluid" alt="">
+                            <img src="~/img/places/@place.MainPhotoPath" class="img-fluid" alt="">
                             <div class="portfolio-info">
                                 <h4>@place.Name</h4>
                                 <p>@place.Description</p>
                                 <div class="portfolio-links">
                                     <a href="~/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
-                                    <a href="/home/details" title="More Details"><i class="bx bx-link"></i></a>
+                                    <a href="/places/details/@place.Id" title="More Details"><i class="bx bx-link"></i></a>
                                 </div>
                             </div>
 

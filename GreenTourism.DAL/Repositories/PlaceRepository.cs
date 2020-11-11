@@ -4,6 +4,7 @@ using GreenTourism.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace GreenTourism.DAL.Repositories
 {
@@ -11,13 +12,21 @@ namespace GreenTourism.DAL.Repositories
     {
         public PlaceRepository(ApplicationDbContext dbContext) : base(dbContext) { }
 
-        public List<Place> GetPlacesWithImages() 
+        public async Task<List<Place>> GetPlacesWithImages() 
         {
-            return dbContext.Set<Place>()
-                .Include(i=>i.MainPhoto)
+            return  await dbContext.Set<Place>()
+                .Include(i=>i.PlacePhotos)
+                .ThenInclude(x=>x.Photo)
                 .Include(r=>r.Region)
-                .Include(m=> m.MainPhoto)
-                .ToList();
+                .ToListAsync();
+        }
+
+        public async Task<Place> GetDetailsPage(long id)
+        {
+            return await dbContext.Set<Place>()
+                .Include(i => i.PlacePhotos)
+                .ThenInclude(x => x.Photo)
+                .FirstOrDefaultAsync(x => x.Id == id);
         }
     }
 }

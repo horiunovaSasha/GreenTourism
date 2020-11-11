@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.2/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.2/resharper-host/local/Transient/Rider/v202/SolutionCaches/_GreenTourism.-1903050314.00" t="ExcludeRecursive" />
-    <e p="$APPLICATION_CONFIG_DIR$/consoles/db" t="IncludeRecursive" />
-    <e p="$APPLICATION_CONFIG_DIR$/extensions" t="IncludeRecursive" />
-    <e p="$APPLICATION_CONFIG_DIR$/scratches" t="IncludeRecursive" />
-    <e p="$PROJECT_DIR$" t="IncludeFlat">
+    <e p="C:\Users\OleksandraKoshman\AppData\local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\OleksandraKoshman\AppData\local\JetBrains\Rider2020.2\resharper-host\local\Transient\Rider\v202\SolutionCaches\_GreenTourism.1016473264.00" t="ExcludeRecursive" />
+    <e p="D:\GreenTourism" t="IncludeFlat">
       <e p="GreenTourism" t="IncludeRecursive">
-        <e p=".gitignore" t="Include" />
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
           <e p="AccountController.cs" t="Include" />
+          <e p="EventsController.cs" t="Include" />
           <e p="HomeController.cs" t="Include" />
+          <e p="PlacesController.cs" t="Include" />
           <e p="RolesController.cs" t="Include" />
         </e>
         <e p="Data" t="Include">
-          <e p="ApplicationDbContext.cs" t="Include" />
+          <e p="AppIdentityDbContext.cs" t="Include" />
         </e>
         <e p="EmailService.cs" t="Include" />
         <e p="GreenTourism.csproj" t="IncludeRecursive" />
         <e p="Migrations" t="Include">
-          <e p="20200928110657_Initial.Designer.cs" t="Include" />
-          <e p="20200928110657_Initial.cs" t="Include" />
-          <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
+          <e p="20201103165633_initial.cs" t="Include" />
+          <e p="20201103165633_initial.Designer.cs" t="Include" />
+          <e p="AppIdentityDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
           <e p="AccountViewModels" t="Include">
@@ -35,30 +36,23 @@
           <e p="ApplicationUser.cs" t="Include" />
           <e p="ErrorViewModel.cs" t="Include" />
         </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="GreenTourism.AssemblyInfo.cs" t="Include" />
+              <e p="GreenTourism.RazorAssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
         </e>
-        <e p="RazorClassLibrary" t="Include">
-          <e p="Areas" t="Include">
-            <e p="MyFeature" t="Include">
-              <e p="Pages" t="Include">
-                <e p="Page1.cshtml" t="Include" />
-                <e p="Page1.cshtml.cs" t="Include" />
-              </e>
-            </e>
-          </e>
-          <e p="obj" t="Include">
-            <e p="RazorClassLibrary.csproj.nuget.cache" t="Include" />
-            <e p="RazorClassLibrary.csproj.nuget.dgspec.json" t="Include" />
-            <e p="RazorClassLibrary.csproj.nuget.g.props" t="Include" />
-            <e p="RazorClassLibrary.csproj.nuget.g.targets" t="Include" />
-            <e p="project.assets.json" t="Include" />
-          </e>
-        </e>
         <e p="RoleInitializer.cs" t="Include" />
         <e p="Startup.cs" t="Include" />
         <e p="Views" t="Include">
+          <e p="_ViewImports.cshtml" t="Include" />
+          <e p="_ViewStart.cshtml" t="Include" />
           <e p="Account" t="Include">
             <e p="ForgotPassword.cshtml" t="Include" />
             <e p="ForgotPasswordConfirmation.cshtml" t="Include" />
@@ -69,8 +63,19 @@
             <e p="ResetPasswordConfirmation.cshtml" t="Include" />
           </e>
           <e p="Home" t="Include">
+            <e p="About.cshtml" t="Include" />
+            <e p="Blog.cshtml" t="Include" />
+            <e p="BlogDetails.cshtml" t="Include" />
+            <e p="Contact.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
             <e p="Index.cshtml" t="Include" />
+            <e p="Portfolio.cshtml" t="Include" />
+            <e p="Pricing.cshtml" t="Include" />
             <e p="Privacy.cshtml" t="Include" />
+            <e p="Services.cshtml" t="Include" />
+          </e>
+          <e p="Places" t="Include">
+            <e p="Index.cshtml" t="Include" />
           </e>
           <e p="Roles" t="Include">
             <e p="Create.cshtml" t="Include" />
@@ -79,37 +84,99 @@
             <e p="UserList.cshtml" t="Include" />
           </e>
           <e p="Shared" t="Include">
-            <e p="Error.cshtml" t="Include" />
             <e p="_CookieConsentPartial.cshtml" t="Include" />
             <e p="_Layout.cshtml" t="Include" />
             <e p="_LoginPartial.cshtml" t="Include" />
+            <e p="_NavBarPartial.cshtml" t="Include" />
             <e p="_ValidationScriptsPartial.cshtml" t="Include" />
-          </e>
-          <e p="_ViewImports.cshtml" t="Include" />
-          <e p="_ViewStart.cshtml" t="Include" />
-        </e>
-        <e p="appsettings.Development.json" t="Include" />
-        <e p="appsettings.json" t="Include" />
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
-            <e p="netcoreapp2.2" t="Include">
-              <e p="GreenTourism.AssemblyInfo.cs" t="Include" />
-              <e p="GreenTourism.RazorAssemblyInfo.cs" t="Include" />
-            </e>
+            <e p="Error.cshtml" t="Include" />
           </e>
         </e>
         <e p="wwwroot" t="Include">
           <e p="css" t="Include">
-            <e p="site.css" t="Include" />
+            <e p="style.css" t="Include" />
           </e>
           <e p="favicon.ico" t="Include" />
+          <e p="img" t="Include">
+            <e p="about.jpg" t="Include" />
+            <e p="apple-touch-icon.png" t="Include" />
+            <e p="blog-1.jpg" t="Include" />
+            <e p="blog-2.jpg" t="Include" />
+            <e p="blog-3.jpg" t="Include" />
+            <e p="blog-4.jpg" t="Include" />
+            <e p="blog-5.jpg" t="Include" />
+            <e p="blog-6.jpg" t="Include" />
+            <e p="blog-author.jpg" t="Include" />
+            <e p="blog-inside-post.jpg" t="Include" />
+            <e p="blog-recent-1.jpg" t="Include" />
+            <e p="blog-recent-2.jpg" t="Include" />
+            <e p="blog-recent-3.jpg" t="Include" />
+            <e p="blog-recent-4.jpg" t="Include" />
+            <e p="blog-recent-5.jpg" t="Include" />
+            <e p="clients" t="Include">
+              <e p="client-1.png" t="Include" />
+              <e p="client-2.png" t="Include" />
+              <e p="client-3.png" t="Include" />
+              <e p="client-4.png" t="Include" />
+              <e p="client-5.png" t="Include" />
+              <e p="client-6.png" t="Include" />
+              <e p="client-7.png" t="Include" />
+              <e p="client-8.png" t="Include" />
+            </e>
+            <e p="comments-1.jpg" t="Include" />
+            <e p="comments-2.jpg" t="Include" />
+            <e p="comments-3.jpg" t="Include" />
+            <e p="comments-4.jpg" t="Include" />
+            <e p="comments-5.jpg" t="Include" />
+            <e p="comments-6.jpg" t="Include" />
+            <e p="favicon.png" t="Include" />
+            <e p="features-1.jpg" t="Include" />
+            <e p="features-2.jpg" t="Include" />
+            <e p="features-3.jpg" t="Include" />
+            <e p="features-4.jpg" t="Include" />
+            <e p="hero-bg.jpg" t="Include" />
+            <e p="main.jpg" t="Include" />
+            <e p="Places" t="Include">
+              <e p="1.jpg" t="Include" />
+              <e p="2.jpg" t="Include" />
+              <e p="3.jpg" t="Include" />
+              <e p="4.jpg" t="Include" />
+              <e p="5.jpg" t="Include" />
+              <e p="6.jpg" t="Include" />
+            </e>
+            <e p="portfolio" t="Include">
+              <e p="portfolio-1.jpg" t="Include" />
+              <e p="portfolio-2.jpg" t="Include" />
+              <e p="portfolio-3.jpg" t="Include" />
+              <e p="portfolio-4.jpg" t="Include" />
+              <e p="portfolio-5.jpg" t="Include" />
+              <e p="portfolio-6.jpg" t="Include" />
+              <e p="portfolio-7.jpg" t="Include" />
+              <e p="portfolio-8.jpg" t="Include" />
+              <e p="portfolio-9.jpg" t="Include" />
+            </e>
+            <e p="portfolio-details-1.jpg" t="Include" />
+            <e p="portfolio-details-2.jpg" t="Include" />
+            <e p="portfolio-details-3.jpg" t="Include" />
+            <e p="skills-img.jpg" t="Include" />
+            <e p="team" t="Include">
+              <e p="team-1.jpg" t="Include" />
+              <e p="team-2.jpg" t="Include" />
+              <e p="team-3.jpg" t="Include" />
+              <e p="team-4.jpg" t="Include" />
+              <e p="team-5.jpg" t="Include" />
+              <e p="team-6.jpg" t="Include" />
+            </e>
+            <e p="work-process-1.png" t="Include" />
+            <e p="work-process-2.png" t="Include" />
+            <e p="work-process-3.png" t="Include" />
+            <e p="work-process-4.png" t="Include" />
+          </e>
           <e p="js" t="Include">
             <e p="site.js" t="Include" />
           </e>
           <e p="lib" t="Include">
             <e p="bootstrap" t="Include">
-              <e p="LICENSE" t="Include" />
               <e p="dist" t="Include">
                 <e p="css" t="Include">
                   <e p="bootstrap-grid.css" t="Include" />
@@ -136,31 +203,232 @@
                   <e p="bootstrap.min.js.map" t="Include" />
                 </e>
               </e>
+              <e p="LICENSE" t="Include" />
             </e>
             <e p="jquery" t="Include">
-              <e p="LICENSE.txt" t="Include" />
               <e p="dist" t="Include">
                 <e p="jquery.js" t="Include" />
                 <e p="jquery.min.js" t="Include" />
                 <e p="jquery.min.map" t="Include" />
               </e>
+              <e p="LICENSE.txt" t="Include" />
             </e>
             <e p="jquery-validation" t="Include">
-              <e p="LICENSE.md" t="Include" />
               <e p="dist" t="Include">
                 <e p="additional-methods.js" t="Include" />
                 <e p="additional-methods.min.js" t="Include" />
                 <e p="jquery.validate.js" t="Include" />
                 <e p="jquery.validate.min.js" t="Include" />
               </e>
+              <e p="LICENSE.md" t="Include" />
             </e>
             <e p="jquery-validation-unobtrusive" t="Include">
-              <e p="LICENSE.txt" t="Include" />
               <e p="jquery.validate.unobtrusive.js" t="Include" />
               <e p="jquery.validate.unobtrusive.min.js" t="Include" />
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+          </e>
+          <e p="vendor" t="Include">
+            <e p="aos" t="Include">
+              <e p="aos.css" t="Include" />
+              <e p="aos.js" t="Include" />
+            </e>
+            <e p="bootstrap" t="Include">
+              <e p="css" t="Include">
+                <e p="bootstrap-grid.css" t="Include" />
+                <e p="bootstrap-grid.css.map" t="Include" />
+                <e p="bootstrap-grid.min.css" t="Include" />
+                <e p="bootstrap-grid.min.css.map" t="Include" />
+                <e p="bootstrap-reboot.css" t="Include" />
+                <e p="bootstrap-reboot.css.map" t="Include" />
+                <e p="bootstrap-reboot.min.css" t="Include" />
+                <e p="bootstrap-reboot.min.css.map" t="Include" />
+                <e p="bootstrap.css" t="Include" />
+                <e p="bootstrap.css.map" t="Include" />
+                <e p="bootstrap.min.css" t="Include" />
+                <e p="bootstrap.min.css.map" t="Include" />
+              </e>
+              <e p="js" t="Include">
+                <e p="bootstrap.bundle.js" t="Include" />
+                <e p="bootstrap.bundle.js.map" t="Include" />
+                <e p="bootstrap.bundle.min.js" t="Include" />
+                <e p="bootstrap.bundle.min.js.map" t="Include" />
+                <e p="bootstrap.js" t="Include" />
+                <e p="bootstrap.js.map" t="Include" />
+                <e p="bootstrap.min.js" t="Include" />
+                <e p="bootstrap.min.js.map" t="Include" />
+              </e>
+            </e>
+            <e p="boxicons" t="Include">
+              <e p="css" t="Include">
+                <e p="animations.css" t="Include" />
+                <e p="boxicons.css" t="Include" />
+                <e p="boxicons.min.css" t="Include" />
+                <e p="transformations.css" t="Include" />
+              </e>
+              <e p="fonts" t="Include">
+                <e p="boxicons.eot" t="Include" />
+                <e p="boxicons.svg" t="Include" />
+                <e p="boxicons.ttf" t="Include" />
+                <e p="boxicons.woff" t="Include" />
+                <e p="boxicons.woff2" t="Include" />
+              </e>
+            </e>
+            <e p="counterup" t="Include">
+              <e p="counterup.min.js" t="Include" />
+            </e>
+            <e p="icofont" t="Include">
+              <e p="fonts" t="Include">
+                <e p="icofont.woff" t="Include" />
+                <e p="icofont.woff2" t="Include" />
+              </e>
+              <e p="icofont.min.css" t="Include" />
+            </e>
+            <e p="isotope-layout" t="Include">
+              <e p="isotope.pkgd.js" t="Include" />
+              <e p="isotope.pkgd.min.js" t="Include" />
+            </e>
+            <e p="jquery" t="Include">
+              <e p="jquery.min.js" t="Include" />
+              <e p="jquery.min.map" t="Include" />
+            </e>
+            <e p="jquery.easing" t="Include">
+              <e p="jquery.easing.min.js" t="Include" />
+            </e>
+            <e p="line-awesome" t="Include">
+              <e p="css" t="Include">
+                <e p="line-awesome.css" t="Include" />
+                <e p="line-awesome.min.css" t="Include" />
+              </e>
+              <e p="fonts" t="Include">
+                <e p="la-brands-400.eot" t="Include" />
+                <e p="la-brands-400.svg" t="Include" />
+                <e p="la-brands-400.ttf" t="Include" />
+                <e p="la-brands-400.woff" t="Include" />
+                <e p="la-brands-400.woff2" t="Include" />
+                <e p="la-regular-400.eot" t="Include" />
+                <e p="la-regular-400.svg" t="Include" />
+                <e p="la-regular-400.ttf" t="Include" />
+                <e p="la-regular-400.woff" t="Include" />
+                <e p="la-regular-400.woff2" t="Include" />
+                <e p="la-solid-900.eot" t="Include" />
+                <e p="la-solid-900.svg" t="Include" />
+                <e p="la-solid-900.ttf" t="Include" />
+                <e p="la-solid-900.woff" t="Include" />
+                <e p="la-solid-900.woff2" t="Include" />
+              </e>
+            </e>
+            <e p="owl.carousel" t="Include">
+              <e p="assets" t="Include">
+                <e p="ajax-loader.gif" t="Include" />
+                <e p="owl.carousel.css" t="Include" />
+                <e p="owl.carousel.min.css" t="Include" />
+                <e p="owl.theme.default.css" t="Include" />
+                <e p="owl.theme.default.min.css" t="Include" />
+                <e p="owl.theme.green.css" t="Include" />
+                <e p="owl.theme.green.min.css" t="Include" />
+                <e p="owl.video.play.png" t="Include" />
+              </e>
+              <e p="LICENSE" t="Include" />
+              <e p="owl.carousel.js" t="Include" />
+              <e p="owl.carousel.min.js" t="Include" />
+              <e p="README.md" t="Include" />
+            </e>
+            <e p="php-email-form" t="Include">
+              <e p="changelog.txt" t="Include" />
+              <e p="validate.js" t="Include" />
+            </e>
+            <e p="venobox" t="Include">
+              <e p="venobox.css" t="Include" />
+              <e p="venobox.js" t="Include" />
+              <e p="venobox.min.css" t="Include" />
+              <e p="venobox.min.js" t="Include" />
+            </e>
+            <e p="waypoints" t="Include">
+              <e p="jquery.waypoints.min.js" t="Include" />
             </e>
           </e>
         </e>
+      </e>
+      <e p="GreenTourism.DAL" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Data" t="Include">
+          <e p="ApplicationDbContext.cs" t="Include" />
+        </e>
+        <e p="GreenTourism.DAL.csproj" t="IncludeRecursive" />
+        <e p="Migrations" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="GreenTourism.DAL.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Repositories" t="Include">
+          <e p="AmenityGroupRepository.cs" t="Include" />
+          <e p="AmenityRepository.cs" t="Include" />
+          <e p="EventCommentRepository.cs" t="Include" />
+          <e p="EventPhotoRepository.cs" t="Include" />
+          <e p="EventRepository.cs" t="Include" />
+          <e p="EventUserRepository.cs" t="Include" />
+          <e p="PhotoRepository.cs" t="Include" />
+          <e p="PlaceAmenityRepository.cs" t="Include" />
+          <e p="PlaceCommentRepository.cs" t="Include" />
+          <e p="PlacePhotoRepository.cs" t="Include" />
+          <e p="PlaceRepository.cs" t="Include" />
+          <e p="RegionRepository.cs" t="Include" />
+          <e p="Repository.cs" t="Include" />
+          <e p="SeasonRepository.cs" t="Include" />
+        </e>
+      </e>
+      <e p="GreenTourism.Domaim" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Entities" t="Include">
+          <e p="IEntity.cs" t="Include" />
+        </e>
+        <e p="GreenTourism.Domain.csproj" t="IncludeRecursive" />
+        <e p="Models" t="Include">
+          <e p="Amenity.cs" t="Include" />
+          <e p="AmenityGroup.cs" t="Include" />
+          <e p="ApplicationUser.cs" t="Include" />
+          <e p="Comment.cs" t="Include" />
+          <e p="Event.cs" t="Include" />
+          <e p="EventComment.cs" t="Include" />
+          <e p="EventPhoto.cs" t="Include" />
+          <e p="EventUser.cs" t="Include" />
+          <e p="Photo.cs" t="Include" />
+          <e p="Place.cs" t="Include" />
+          <e p="PlaceAmenity.cs" t="Include" />
+          <e p="PlaceComment.cs" t="Include" />
+          <e p="PlacePhoto.cs" t="Include" />
+          <e p="Region.cs" t="Include" />
+          <e p="Season.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="GreenTourism.Domain.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Repositories" t="Include">
+          <e p="IAmenityGroupRepository.cs" t="Include" />
+          <e p="IAmenityRepository.cs" t="Include" />
+          <e p="IEventCommentRepository.cs" t="Include" />
+          <e p="IEventPhotoRepository.cs" t="Include" />
+          <e p="IEventRepository.cs" t="Include" />
+          <e p="IEventUserRepository.cs" t="Include" />
+          <e p="IPhotoRepository.cs" t="Include" />
+          <e p="IPlaceAmenityRepository.cs" t="Include" />
+          <e p="IPlaceCommentRepository.cs" t="Include" />
+          <e p="IPlacePhotoRepository.cs" t="Include" />
+          <e p="IPlaceRepository.cs" t="Include" />
+          <e p="IRegionRepository.cs" t="Include" />
+          <e p="IRepository.cs" t="Include" />
+          <e p="ISeasonRepository.cs" t="Include" />
+        </e>
+        <e p="Services" t="Include" />
       </e>
       <e p="GreenTourism.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />

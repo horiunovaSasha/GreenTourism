@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -10,13 +10,15 @@ namespace GreenTourism.Models.AccountViewModels
     {
         [Required]
         [EmailAddress]
+        [Display(Name = "Логін")]
         public string Email { get; set; }
  
         [Required]
         [DataType(DataType.Password)]
+        [Display(Name = "Пароль")]
         public string Password { get; set; }
  
-        [Display(Name = "Remember me?")]
+        [Display(Name = "Запам'ятати мене?")]
         public bool RememberMe { get; set; }
     }
 }

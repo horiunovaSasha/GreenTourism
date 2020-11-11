@@ -135,6 +135,7 @@ namespace GreenTourism.Controllers
         {
             ViewData["ReturnUrl"] = returnUrl;
             var user = await _userManager.FindByNameAsync(model.Email);
+           //TODO add check if user exists
             if (ModelState.IsValid)
             {
                 if (!await _userManager.IsEmailConfirmedAsync(user))
