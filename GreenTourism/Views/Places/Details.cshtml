@@ -30,12 +30,11 @@
                 </div>
 
                 <div class="portfolio-info">
-                    <h3>Інформіція</h3>
+                    <h3>Інформація</h3>
                     <ul>
                         <li><strong>Назва</strong>: @Model.Name</li>
                         <li><strong>Опис</strong>: @Model.Description</li>
-                        <li><strong>Координати</strong>: @Model.LocationCoords</li>
-                        @*<li><strong>Регіон</strong>: @Model.LocationCoords </li>*@
+                        @*<li><strong>Регіон</strong>: @Model.Region.Name </li>*@
                         <li><strong>Рейтинг</strong>: @Model.Rating </li>
                     </ul>
                 </div>
@@ -47,6 +46,9 @@
                 <p>
                     @Model.Description
                 </p>
+            </div>
+            <div>
+                <iframe style="border:0; width: 100%; height: 270px;" src="@Model.LocationCoords" frameborder="0" allowfullscreen></iframe>
             </div>
 
         </div>
