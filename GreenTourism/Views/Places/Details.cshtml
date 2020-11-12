@@ -1,4 +1,6 @@
-﻿@{
+﻿@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@{
     @model GreenTourism.DAL.Models.Place
 }
 
@@ -50,8 +52,67 @@
             <div>
                 <iframe style="border:0; width: 100%; height: 270px;" src="@Model.LocationCoords" frameborder="0" allowfullscreen></iframe>
             </div>
-
         </div>
-
     </section>
+
+    <section id="blog" class="blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 entries">
+                    <div class="blog-comments">
+
+                        <h4 class="comments-count">8 Comments</h4>
+
+                        <div id="comment-1" class="comment clearfix">
+                            <img src="~/img/comments-1.jpg" class="comment-img  float-left" alt="">
+                            <h5><a href="">Georgia Reader</a> <a href="#" class="reply"><i class="icofont-reply"></i> Reply</a></h5>
+                            <time datetime="2020-01-01">01 Jan, 2020</time>
+                            <p>
+                                Et rerum totam nisi. Molestiae vel quam dolorum vel voluptatem et et. Est ad aut sapiente quis molestiae est qui cum soluta.
+                                Vero aut rerum vel. Rerum quos laboriosam placeat ex qui. Sint qui facilis et.
+                            </p>
+
+                        </div>
+
+                        <div id="comment-2" class="comment clearfix">
+                            <img src="~/img/comments-2.jpg" class="comment-img  float-left" alt="">
+                            <h5><a href="">Aron Alvarado</a> <a href="#" class="reply"><i class="icofont-reply"></i> Reply</a></h5>
+                            <time datetime="2020-01-01">01 Jan, 2020</time>
+                            <p>
+                                Ipsam tempora sequi voluptatem quis sapiente non. Autem itaque eveniet saepe. Officiis illo ut beatae.
+                            </p>
+
+                            <div id="comment-reply-1" class="comment comment-reply clearfix">
+                                <img src="~/img/comments-3.jpg" class="comment-img  float-left" alt="">
+                                <h5><a href="">Lynda Small</a> <a href="#" class="reply"><i class="icofont-reply"></i> Reply</a></h5>
+                                <time datetime="2020-01-01">01 Jan, 2020</time>
+                                <p>
+                                    Enim ipsa eum fugiat fuga repellat. Commodi quo quo dicta. Est ullam aspernatur ut vitae quia mollitia id non. Qui ad quas nostrum rerum sed necessitatibus aut est. Eum officiis sed repellat maxime vero nisi natus. Amet nesciunt nesciunt qui illum omnis est et dolor recusandae.
+
+                                    Recusandae sit ad aut impedit et. Ipsa labore dolor impedit et natus in porro aut. Magnam qui cum. Illo similique occaecati nihil modi eligendi. Pariatur distinctio labore omnis incidunt et illum. Expedita et dignissimos distinctio laborum minima fugiat.
+
+                                    Libero corporis qui. Nam illo odio beatae enim ducimus. Harum reiciendis error dolorum non autem quisquam vero rerum neque.
+                                </p>
+                            </div>
+                        </div>
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <div class="reply-form">
+                                <h4>Залишити коментар</h4>
+                                <form action="">
+                                    <div class="row">
+                                        <div class="col form-group">
+                                            <textarea name="comment" class="form-control" placeholder="Ваш коментар*"></textarea>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Опублікувати</button>
+                                </form>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </main>
