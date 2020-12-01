@@ -1,7 +1,7 @@
 ﻿@inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 @{
-    @model GreenTourism.DAL.Models.Place
+    @model GreenTourism.Models.PlaceViewModel
 }
 
 <main id="main">
@@ -59,22 +59,23 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 entries">
-                    <div class="blog-comments">
+                    <div class="blog-comments" id="blog-comments">
 
-                        <h4 class="comments-count">8 Comments</h4>
+                        <h4 class="comments-count">Кількість коментарів: @Model.PlaceComments.Count</h4>
 
-                        <div id="comment-1" class="comment clearfix">
+                        @foreach (var comment in Model.PlaceComments.Select(x => x.Comment))
+                        {
+                        <div class="comment clearfix">
                             <img src="~/img/comments-1.jpg" class="comment-img  float-left" alt="">
-                            <h5><a href="">Georgia Reader</a> <a href="#" class="reply"><i class="icofont-reply"></i> Reply</a></h5>
-                            <time datetime="2020-01-01">01 Jan, 2020</time>
+                            <h5><a href="">Georgia Reader</a></h5>
+                            <time datetime="@comment.CreatedDate">@comment.CreatedDate</time>
                             <p>
-                                Et rerum totam nisi. Molestiae vel quam dolorum vel voluptatem et et. Est ad aut sapiente quis molestiae est qui cum soluta.
-                                Vero aut rerum vel. Rerum quos laboriosam placeat ex qui. Sint qui facilis et.
+                                @comment.Text
                             </p>
 
                         </div>
-
-                        <div id="comment-2" class="comment clearfix">
+                        }
+                        @*<div id="comment-2" class="comment clearfix">
                             <img src="~/img/comments-2.jpg" class="comment-img  float-left" alt="">
                             <h5><a href="">Aron Alvarado</a> <a href="#" class="reply"><i class="icofont-reply"></i> Reply</a></h5>
                             <time datetime="2020-01-01">01 Jan, 2020</time>
@@ -94,7 +95,7 @@
                                     Libero corporis qui. Nam illo odio beatae enim ducimus. Harum reiciendis error dolorum non autem quisquam vero rerum neque.
                                 </p>
                             </div>
-                        </div>
+                        </div>*@
                         @if (SignInManager.IsSignedIn(User))
                         {
                             <div class="reply-form">
@@ -102,10 +103,10 @@
                                 <form action="">
                                     <div class="row">
                                         <div class="col form-group">
-                                            <textarea name="comment" class="form-control" placeholder="Ваш коментар*"></textarea>
+                                            <textarea name="CurrentComment" class="form-control" placeholder="Ваш коментар*" id="CurrentComment"></textarea>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Опублікувати</button>
+                                    <a href="#" onclick="return sendComment()" class="btn btn-primary">Опублікувати</a>
                                 </form>
                             </div>
                         }
@@ -114,5 +115,29 @@
             </div>
         </div>
     </section>
+    <script type="text/javascript">
+        function sendComment() {
+            $.ajax({
+                type: "POST",
+                url: "/api/comment?placeId=@Model.Id",
+                data: JSON.stringify({
+                    Text: $("#CurrentComment").val()
+                }),
+                success: function (response) {
+                    var div = '<div class="comment clearfix">' +
+                        '<img src="/img/comments-2.jpg" class="comment-img float-left" alt="test">' +
+                        '<h5><a href="#">Oleksandra Koshman</a></h5>' +
+                        '<time datetime="' + response.createdDate +'">'+ response.createdDate +'</time>' +
+                        '<p>' + response.text + '</p>' +
+                        '</div>';
 
+                    $(div).insertBefore(".reply-form")
+                },
+                contentType: "application/json",
+                dataType: "json",
+            });
+
+            return false;
+        }
+    </script>
 </main>

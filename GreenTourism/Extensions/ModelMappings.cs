@@ -13,9 +13,12 @@ namespace GreenTourism.Extensions
                 Id = place.Id,
                 Name = place.Name,
                 Description = place.Description,
-                MainPhotoPath = place.PlacePhotos.FirstOrDefault().Photo.Path,
+                MainPhotoPath = place.PlacePhotos.FirstOrDefault()?.Photo?.Path,
                 Rating = place.Rating,
-                Region = place.Region
+                Region = place.Region,
+                PlacePhotos = place.PlacePhotos,
+                PlaceComments = place.PlaceComments,
+                LocationCoords = place.LocationCoords,
             };
         }
     }

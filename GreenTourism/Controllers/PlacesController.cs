@@ -3,16 +3,21 @@ using Microsoft.AspNetCore.Mvc;
 using GreenTourism.Extensions;
 using System.Linq;
 using System.Threading.Tasks;
+using GreenTourism.DAL.Models;
+using Microsoft.AspNetCore.Identity;
+using System;
 
 namespace GreenTourism.Controllers
 {
     public class PlacesController : Controller
     {
         private readonly IPlaceRepository _placeRepository;
+        private readonly ICommentRepository _commentRepository;
 
-        public PlacesController(IPlaceRepository placeRepository)
+        public PlacesController(IPlaceRepository placeRepository, ICommentRepository commentRepository)
         {
             _placeRepository = placeRepository;
+            _commentRepository = commentRepository;
         }
 
         public ActionResult Index()
@@ -26,7 +31,7 @@ namespace GreenTourism.Controllers
 
         public async Task<ActionResult> Details(long id)
         {
-            var details = await _placeRepository.GetDetailsPage(id);
+            var details = (await _placeRepository.GetDetailsPage(id))?.ToPlaceViewModel();
             return View(details);
         }
     }

@@ -1,4 +1,5 @@
 ﻿using GreenTourism.DAL.Models;
+using System.Collections.Generic;
 
 namespace GreenTourism.Models
 {
@@ -10,5 +11,8 @@ namespace GreenTourism.Models
         public Region Region { get; set; }
         public decimal Rating { get; set; }
         public string MainPhotoPath { get; set; }
+        public List<PlaceComment> PlaceComments { get; set; }
+        public List<PlacePhoto> PlacePhotos { get; set; }
+        public string LocationCoords { get; set; }
     }
 }

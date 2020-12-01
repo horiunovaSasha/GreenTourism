@@ -103,8 +103,6 @@ namespace GreenTourism.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
-
                     b.ToTable("Comments");
                 });
 
@@ -200,11 +198,7 @@ namespace GreenTourism.DAL.Migrations
 
                     b.Property<string>("Path");
 
-                    b.Property<long?>("PlaceId");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("PlaceId");
 
                     b.ToTable("Photos");
                 });
@@ -326,13 +320,6 @@ namespace GreenTourism.DAL.Migrations
                         .HasForeignKey("AmenityGroupId");
                 });
 
-            modelBuilder.Entity("GreenTourism.DAL.Models.Comment", b =>
-                {
-                    b.HasOne("GreenTourism.DAL.Models.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-                });
-
             modelBuilder.Entity("GreenTourism.DAL.Models.Event", b =>
                 {
                     b.HasOne("GreenTourism.DAL.Models.ApplicationUser", "AuthorId")
@@ -377,13 +364,6 @@ namespace GreenTourism.DAL.Migrations
                         .HasForeignKey("EventId");
                 });
 
-            modelBuilder.Entity("GreenTourism.DAL.Models.Photo", b =>
-                {
-                    b.HasOne("GreenTourism.DAL.Models.Place")
-                        .WithMany("Photos")
-                        .HasForeignKey("PlaceId");
-                });
-
             modelBuilder.Entity("GreenTourism.DAL.Models.Place", b =>
                 {
                     b.HasOne("GreenTourism.DAL.Models.Region", "Region")
@@ -413,7 +393,7 @@ namespace GreenTourism.DAL.Migrations
                         .HasForeignKey("CommentId");
 
                     b.HasOne("GreenTourism.DAL.Models.Place", "Place")
-                        .WithMany()
+                        .WithMany("PlaceComments")
                         .HasForeignKey("PlaceId");
                 });
 
@@ -424,7 +404,7 @@ namespace GreenTourism.DAL.Migrations
                         .HasForeignKey("PhotoId");
 
                     b.HasOne("GreenTourism.DAL.Models.Place", "Place")
-                        .WithMany()
+                        .WithMany("PlacePhotos")
                         .HasForeignKey("PlaceId");
                 });
 #pragma warning restore 612, 618

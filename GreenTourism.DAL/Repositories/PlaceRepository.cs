@@ -24,6 +24,8 @@ namespace GreenTourism.DAL.Repositories
         public async Task<Place> GetDetailsPage(long id)
         {
             return await dbContext.Set<Place>()
+                .Include(i => i.PlaceComments)
+                .ThenInclude(x => x.Comment)
                 .Include(i => i.PlacePhotos)
                 .ThenInclude(x => x.Photo)
                 .FirstOrDefaultAsync(x => x.Id == id);

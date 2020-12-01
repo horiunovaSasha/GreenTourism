@@ -43,7 +43,7 @@ namespace GreenTourism
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            services.AddDefaultIdentity<ApplicationUser>(options =>
             {
                 options.Lockout.MaxFailedAccessAttempts = 5;
                 options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(15);
@@ -56,6 +56,8 @@ namespace GreenTourism
             services.AddTransient<ISeasonRepository, SeasonRepository>();
             services.AddTransient<IPhotoRepository, PhotoRepository>();
             services.AddTransient<IEventPhotoRepository, EventPhotoRepository>();
+            services.AddTransient<ICommentRepository, CommentRepository>();
+            services.AddTransient<IPlaceCommentRepository, PlaceCommentRepository>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

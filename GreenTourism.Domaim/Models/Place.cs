@@ -12,6 +12,7 @@ namespace GreenTourism.DAL.Models
         public Region Region { get; set; }
         public decimal Rating { get; set; }
         public Season Season { get; set; }
+        public virtual List<PlaceComment> PlaceComments { get; set; }
         public virtual List<PlacePhoto> PlacePhotos { get; set; }
     }
 }
